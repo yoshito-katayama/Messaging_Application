@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./script.js"></script>
+    <title>DevEx GPT</title>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-container image-logo">
+        <img src="./images/mq-logo.png" alt="Logo" />
+      </div>
+      <div class="chat-container">
+        <div class="message">Please enter messages</div>
+      </div>
+
+      <div class="user-input">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Type your message..."
+        />
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="getMessage()">Receive</button>
+        <button id="mqConsoleBtn" connName="" onclick="openMQConsole()"> MQ Console </button>
+        <!-- Add spinner HTML -->
+        <div class="spinner"></div>
+      </div>
+
+      <!-- Db2のインサート -->
+      <div class="user-input">
+        <input
+          type="text"
+          id="message-insert"
+          placeholder="Type your message..."
+        />
+        <button onclick="insertMessage()">Insert</button>
+        <button id="message-check" onclick="checkDb2Contents()"> Check </button>
+        <div class="spinner"></div>
+      </div>
+
+      <!-- MQ+Db2 -->
+      <div class="user-input">
+        <input
+          type="text"
+          id="message-register"
+          placeholder="Type your message..."
+        />
+        <button onclick="registerMessage()">Register</button>
+        <button id="message-check" onclick="checkDb2Contents()"> Check </button>
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </body>
+</html>
