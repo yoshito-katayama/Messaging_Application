@@ -39,8 +39,8 @@ public class DemoController {
         List<String> list = new ArrayList<>();
 
         jdbcTemplate.query(
-            "SELECT * FROM test_table",
-            (rs, rowNum) -> rs.getString("message")
+            "select * from test_table",
+            (rs, rowNum) -> rs.getString("MESSAGE")
         ).forEach(thing -> list.add(thing.toString()));
 
         return ResponseEntity.ok("{ \"message\" : \"Message Contents: "  + list +"\" }");
