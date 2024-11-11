@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### 追加 ###
+start.sh
+stop.sh
