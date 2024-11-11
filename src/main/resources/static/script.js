@@ -20,7 +20,7 @@ const openMQConsole = () => {
 const performGetQMAddress = async () => {
   try {
     /** `http://localhost:8080/address` DemoController.javaへ **/
-    const response = await fetch(`http://localhost:8080/address`);
+    const response = await fetch(`http://172.30.6.154:8080/address`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
@@ -38,7 +38,7 @@ const performSend = async (msg) => {
   try {
     /** `http://localhost:8080/send` DemoController.javaへ **/
     const response = await fetch(
-      `http://localhost:8080/send?msg=${encodeURIComponent(msg)}`
+      `http://172.30.6.154:8080/send?msg=${encodeURIComponent(msg)}`
     );
     /** エラーチェック **/
     if (!response.ok) {
@@ -56,7 +56,7 @@ const performSend = async (msg) => {
 const performGet = async () => {
   try {
     /** `http://localhost:8080/recv` DemoController.javaへ **/
-    const response = await fetch(`http://localhost:8080/recv`);
+    const response = await fetch(`http://172.30.6.154:8080/recv`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
@@ -144,7 +144,7 @@ async function insertMessage() {
 const performInsert = async (msg) => {
   try {
     /** `http://localhost:8080/insert` DemoController.javaへ **/
-    const response = await fetch("http://localhost:8080/insert", {
+    const response = await fetch("http://172.30.6.154:8080/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -183,8 +183,7 @@ async function checkDb2Contents() {
 const performSelect = async () => {
   try {
     /** `http://localhost:8080/check` DemoController.javaへ **/
-    /** const response = await fetch(`http://localhost:8080/check`); **/
-    const response = await fetch(`http://c-db2ucluster-sample-db2u:50000/check`);
+    const response = await fetch(`http://172.30.6.154:8080/check`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
