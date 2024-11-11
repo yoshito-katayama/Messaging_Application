@@ -183,7 +183,8 @@ async function checkDb2Contents() {
 const performSelect = async () => {
   try {
     /** `http://localhost:8080/check` DemoController.javaへ **/
-    const response = await fetch(`http://localhost:8080/check`);
+    /** const response = await fetch(`http://localhost:8080/check`); **/
+    const response = await fetch(`http://c-db2ucluster-sample-db2u:50000/check`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
