@@ -183,7 +183,7 @@ async function checkDb2Contents() {
 const performSelect = async () => {
   try {
     /** `http://localhost:8080/check` DemoController.javaへ **/
-    const response = await fetch(`https://test2-db2u-oltp1.apps.672cc2f20c7a71b728e526d0.ocp.techzone.ibm.com:8080/check`);
+    const response = await fetch(`https://172.30.232.81:8080/check`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
