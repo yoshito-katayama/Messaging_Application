@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,6 +36,7 @@ public class DemoController {
 
 	/** Db2の内容を照会する関数 **/
 	@GetMapping("check")
+	@CrossOrigin
     public @ResponseBody ResponseEntity<String> checkMessage() {
         List<String> list = new ArrayList<>();
 
