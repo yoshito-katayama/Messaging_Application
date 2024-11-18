@@ -35,8 +35,9 @@ public class DemoController {
 	}
 
 	/** Db2の内容を照会する関数 **/
-	@GetMapping("check")
 	@CrossOrigin
+	@GetMapping("check")
+	/** @CrossOrigin **/
     public @ResponseBody ResponseEntity<String> checkMessage() {
         List<String> list = new ArrayList<>();
 
@@ -49,6 +50,7 @@ public class DemoController {
     }
 
 	/** Db2にインサートする関数 **/
+	@CrossOrigin
 	@PostMapping("insert")
 	public @ResponseBody ResponseEntity<String> addMessage(@RequestParam("msg") String msg) {
 		try {
@@ -62,6 +64,7 @@ public class DemoController {
 	}
 
 	/** メッセージ(msg)をMQサーバに送信する関数 **/
+	@CrossOrigin
 	@GetMapping("send")
 	public String send(@RequestParam("msg") String msg) {
 		/** MessageService.javaを呼び出し、MQに送信 **/
@@ -69,6 +72,7 @@ public class DemoController {
 	}
 
 	/** メッセージをMQサーバから受信する関数 **/
+	@CrossOrigin
 	@GetMapping("recv")
 	public String recv() {
 		/** MessageService.javaを呼び出し、MQから受信 **/
@@ -76,6 +80,7 @@ public class DemoController {
 	}
 
 	/** MQのアドレスを取得する関数 **/
+	@CrossOrigin
 	@GetMapping("address")
 	public String address() {
 		try {
