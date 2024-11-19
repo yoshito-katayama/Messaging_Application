@@ -20,7 +20,7 @@ const openMQConsole = () => {
 const performGetQMAddress = async () => {
   try {
     /** `http://localhost:8080/address` DemoController.javaへ **/
-    const response = await fetch(`https://demo-4-mqdb2.apps.673a82dd2d681465a42b84fa.ocp.techzone.ibm.com/address`);
+    const response = await fetch(`https://app-hands-on-test.cluster-mdpd-container-e0f3feaa6b4ef88a2938a1815281ffc2-0000.jp-tok.containers.appdomain.cloud/address`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
@@ -38,7 +38,7 @@ const performSend = async (msg) => {
   try {
     /** `http://localhost:8080/send` DemoController.javaへ **/
     const response = await fetch(
-      `https://demo-4-mqdb2.apps.673a82dd2d681465a42b84fa.ocp.techzone.ibm.com/send?msg=${encodeURIComponent(msg)}`
+      `https://app-hands-on-test.cluster-mdpd-container-e0f3feaa6b4ef88a2938a1815281ffc2-0000.jp-tok.containers.appdomain.cloud/send?msg=${encodeURIComponent(msg)}`
     );
     /** エラーチェック **/
     if (!response.ok) {
@@ -56,7 +56,7 @@ const performSend = async (msg) => {
 const performGet = async () => {
   try {
     /** `http://localhost:8080/recv` DemoController.javaへ **/
-    const response = await fetch(`https://demo-4-mqdb2.apps.673a82dd2d681465a42b84fa.ocp.techzone.ibm.com/recv`);
+    const response = await fetch(`https://app-hands-on-test.cluster-mdpd-container-e0f3feaa6b4ef88a2938a1815281ffc2-0000.jp-tok.containers.appdomain.cloud/recv`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
@@ -144,7 +144,7 @@ async function insertMessage() {
 const performInsert = async (msg) => {
   try {
     /** `http://localhost:8080/insert` DemoController.javaへ **/
-    const response = await fetch("https://demo-4-mqdb2.apps.673a82dd2d681465a42b84fa.ocp.techzone.ibm.com/insert", {
+    const response = await fetch("https://app-hands-on-test.cluster-mdpd-container-e0f3feaa6b4ef88a2938a1815281ffc2-0000.jp-tok.containers.appdomain.cloud/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -183,7 +183,7 @@ async function checkDb2Contents() {
 const performSelect = async () => {
   try {
     /** `http://localhost:8080/check` DemoController.javaへ **/
-    const response = await fetch(`https://demo-4-mqdb2.apps.673a82dd2d681465a42b84fa.ocp.techzone.ibm.com/check`);
+    const response = await fetch(`https://app-hands-on-test.cluster-mdpd-container-e0f3feaa6b4ef88a2938a1815281ffc2-0000.jp-tok.containers.appdomain.cloud/check`);
     /** エラーチェック **/
     if (!response.ok) {
       return { status: false, data: "Some errors occured" };
