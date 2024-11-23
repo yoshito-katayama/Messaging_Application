@@ -3,54 +3,41 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
     <script src="./script.js"></script>
-    <title>DevEx GPT</title>
-
+    <title>Messageing Application</title>
   </head>
   <body>
+    <header class="header">
+      <h1>💬 Messaging Application</h1>
+    </header>
     <div class="container">
       <div class="logo-container image-logo">
-        <img src="./images/mq-logo.png" alt="Logo" />
+        <img src="./images/openshift.png" alt="Logo" />
       </div>
       <div class="chat-container">
-        <div class="message">Please enter messages!</div>
+        <div class="past-message"></div>
+        <div class="message">
+          <a style="font-weight: bold;">メッセージが表示されます！</a>
+        </div>
       </div>
-
       <div class="user-input">
-        <input
-          type="text"
-          id="message-input"
-          placeholder="Type your message..."
-        />
-        <button onclick="sendMessage()">Send</button>
-        <button onclick="getMessage()">Receive</button>
-        <button id="mqConsoleBtn" connName="" onclick="openMQConsole()"> MQ Console </button>
-        <!-- Add spinner HTML -->
-        <div class="spinner"></div>
+        <div class="input-group">
+          <a>名前　　　：</a>
+          <input type="text" id="name-input" placeholder="名前を入力"/>
+        </div>
+      
+        <div class="input-group">
+          <a>メッセージ：</a>
+          <textarea id="message-input" placeholder="メッセージを入力"></textarea>
+        </div>
+      
+        <div class="input-group">
+          <button onclick="sendMessage()">📤　送信</button>
+          <button onclick="checkDb2Contents()">🔁　更新</button>
+        </div>
       </div>
-
-      <!-- Db2のインサート -->
-      <div class="user-input">
-        <input
-          type="text"
-          id="message-insert"
-          placeholder="Type your message..."
-        />
-        <button onclick="insertMessage()">Insert</button>
-        <button id="message-check" onclick="checkDb2Contents()"> Check </button>
-        <div class="spinner"></div>
       </div>
-
-      <!-- MQ+Db2 -->
-      <div class="user-input">
-        <input
-          type="text"
-          id="message-register"
-          placeholder="Type your message..."
-        />
-        <button onclick="registerMessage()">Register</button>
-        <button id="message-check" onclick="checkDb2Contents()"> Check </button>
-        <div class="spinner"></div>
-      </div>
+      <!-- Add spinner HTML -->
+      <div class="spinner"></div>
     </div>
   </body>
 </html>
