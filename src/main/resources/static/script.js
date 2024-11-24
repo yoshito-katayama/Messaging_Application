@@ -80,14 +80,6 @@ const addMessage = (msg) => {
   chatContainer.scrollTop = chatContainer.scrollHeight;
 };
 
-document.addEventListener('DOMContentLoaded', async function() {
-  await checkDb2Contents();
-})
-
-function reload(){
-  window.location.reload();
-}
-
 /** Db2のコンテンツを確認する関数 **/
 async function checkDb2Contents() {
   /** スピナーの表示 **/
