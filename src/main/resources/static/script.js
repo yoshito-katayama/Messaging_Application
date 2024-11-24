@@ -125,3 +125,40 @@ const performSelect = async () => {
     return { status: false, data: err };
   }
 };
+
+// 画面に表示されたメッセージを追跡
+let displayedMessages = new Set();
+
+// 定期的にメッセージを取得するポーリング関数
+async function pollMessages() {
+  try {
+    // サーバーからメッセージを取得
+    let res = await performSelect();
+    if (!res.status) {
+      console.error("Error fetching messages:", res.data);
+      return;
+    }
+
+    // レスポンスデータの整形
+    const cleanString = res.data.replace("Message Contents: ", "");
+    const cleanedStringWithoutBrackets = cleanString.replace(/^\[|\]$/g, '').trim();
+    const messageArray = cleanedStringWithoutBrackets.split(",").map(item => item.trim());
+    const filteredArray = messageArray.filter(item => item !== "null" && item !== "");
+
+    // 新しいメッセージだけを追加
+    filteredArray.forEach(msg => {
+      if (!displayedMessages.has(msg)) {
+        displayedMessages.add(msg); // 新しいメッセージを記録
+        addMessage(msg); // UIに追加
+      }
+    });
+  } catch (error) {
+    console.error("Polling error:", error);
+  }
+}
+
+// 初回実行とポーリング間隔設定
+document.addEventListener('DOMContentLoaded', async function () {
+  await pollMessages(); // 初回メッセージ取得
+  setInterval(pollMessages, 1000); // 5秒ごとにポーリング
+});

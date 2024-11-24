@@ -10,13 +10,9 @@
       <h1>💬 Messaging Application</h1>
     </header>
     <div class="container">
-      <div class="logo-container image-logo">
-        <img src="./images/openshift.png" alt="Logo" />
-      </div>
       <div class="chat-container">
-        <div class="past-message"></div>
         <div class="message">
-          <a style="font-weight: bold;">メッセージが表示されます！</a>
+          <a style="font-weight: bold;">自由にメッセージを送信してください！</a>
         </div>
       </div>
       <div class="user-input">
@@ -32,12 +28,9 @@
       
         <div class="input-group">
           <button onclick="sendMessage()">📤　送信</button>
-          <button onclick="reload()">🔁　更新</button>
+          <div class="spinner"></div>
         </div>
       </div>
-      </div>
-      <!-- Add spinner HTML -->
-      <div class="spinner"></div>
     </div>
   </body>
 </html>
