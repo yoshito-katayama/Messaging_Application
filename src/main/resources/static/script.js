@@ -151,7 +151,6 @@ async function pollMessages() {
 
 // 初回実行とポーリング間隔設定
 document.addEventListener('DOMContentLoaded', async function () {
-  await checkDb2Contents(); // 初回表示を担当
   // await pollMessages(); // 初回メッセージ取得
   setInterval(pollMessages, 1000); // 5秒ごとにポーリング
 });
